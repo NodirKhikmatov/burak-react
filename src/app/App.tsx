@@ -6,8 +6,10 @@ import { UserPage } from "./screens/userPage/index";
 import { HomePage } from "./screens/homePage/index";
 import { HomeNavbar } from "./components/headers/HomeNavbar";
 import { OtherNavbar } from "./components/headers/OtherNavbar";
+import { HelpPage } from "./screens/helpPage/index";
 import { Footer } from "./components/footer/index";
 import "../css/app.css";
+import "../css/navbar.css";
 
 import { Switch, Route, Link, useLocation } from "react-router-dom";
 
@@ -24,6 +26,9 @@ function App() {
         </Route>
         <Route path="/orders">
           <OrdersPage />
+        </Route>
+        <Route path="/help">
+          <HelpPage />
         </Route>
         <Route path="/member-page">
           <UserPage />
