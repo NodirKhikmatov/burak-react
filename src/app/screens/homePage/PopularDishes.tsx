@@ -6,7 +6,7 @@ import CardContent from "@mui/joy/CardContent";
 import Typography from "@mui/joy/Typography";
 import CardOverflow from "@mui/joy/CardOverflow";
 import VisibilityIcon from "@mui/icons-material/Visibility";
-import DescriptionOutlineIcon from "@mui/icons-material/DescriptionOutlined";
+import DescriptionOutlinedIcon from "@mui/icons-material/DescriptionOutlined";
 
 const list = [
   { productName: "Lavash", imagePath: "/img/lavash.webp" },
@@ -17,35 +17,32 @@ const list = [
 
 export default function PopularDishes() {
   return (
-    <div className={"popular-dishes-frame"}>
+    <div className="popular-dishes-frame">
       <Container>
-        <Stack className={"popular-section"}>
-          <Box className={"category-title"}>Popular Dishes </Box>
-          <Stack className={"cards-frame"}>
-            {list.map((ele, index) => {
-              return (
+        <Stack className="popular-section">
+          <Box className="category-title">Popular Dishes</Box>
+          <Stack className="cards-frame">
+            {list.length !== 0 ? (
+              list.map((ele, index) => (
                 <CssVarsProvider key={index}>
-                  <Card className={"card"}>
+                  <Card className="card">
                     <CardCover>
-                      <img src={ele.imagePath} alt="" />
+                      <img src={ele.imagePath} alt={ele.productName} />
                     </CardCover>
-                    <CardCover className={"card-cover"} />
+                    <CardCover className="card-cover" />
                     <CardContent sx={{ justifyContent: "flex-end" }}>
-                      <Stack
-                        flexDirection={"row"}
-                        justifyContent={"space-between"}
-                      >
+                      <Stack flexDirection="row" justifyContent="space-between">
                         <Typography
                           level="h2"
                           textColor="#fff"
-                          fontSize={"lg"}
+                          fontSize="lg"
                           mb={1}
                         >
                           {ele.productName}
                         </Typography>
                         <Typography
                           sx={{
-                            fontweight: "md",
+                            fontWeight: "md",
                             color: "neutral.300",
                             alignItems: "center",
                             display: "flex",
@@ -69,16 +66,18 @@ export default function PopularDishes() {
                       }}
                     >
                       <Typography
-                        startDecorator={<DescriptionOutlineIcon />}
+                        startDecorator={<DescriptionOutlinedIcon />}
                         textColor="neutral.300"
                       >
-                        This is delicious meal
+                        This is a delicious meal
                       </Typography>
                     </CardOverflow>
                   </Card>
                 </CssVarsProvider>
-              );
-            })}
+              ))
+            ) : (
+              <Box className="no-data">New products are not available!</Box>
+            )}
           </Stack>
         </Stack>
       </Container>

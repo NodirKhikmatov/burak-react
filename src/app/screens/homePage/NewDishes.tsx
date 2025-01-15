@@ -6,6 +6,8 @@ import CardOverflow from "@mui/joy/CardOverflow";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import AspectRatio from "@mui/joy/AspectRatio";
 import Divider from "../../components/divider/index";
+
+// new dishes data
 const newDishes = [
   { productName: "Cutlet", imagePath: "/img/cutlet.webp" },
   { productName: "Kebab", imagePath: "/img/kebab-fresh.webp" },
@@ -15,44 +17,46 @@ const newDishes = [
 
 export default function NewDishes() {
   return (
-    <div className={"new-products-frame"}>
+    <div className="new-products-frame">
       <Container>
-        <Stack className={"main"}>
-          <Box className={"category-title"}>Popular Dishes </Box>
-          <Stack className={"cards-frame"}>
+        <Stack className="main">
+          <Box className="category-title">Popular Dishes</Box>
+          <Stack className="cards-frame">
             <CssVarsProvider>
-              {newDishes.map((ele, index) => {
-                return (
-                  <Card key={index} variant="outlined" className={"card"}>
+              {newDishes.length !== 0 ? (
+                newDishes.map((ele, index) => (
+                  <Card key={index} variant="outlined" className="card">
                     <CardOverflow>
-                      <div className={"product-sale"}>Normal Sizs</div>
+                      <div className="product-sale">Normal Size</div>
                       <AspectRatio ratio="1">
-                        <img src={ele.imagePath} alt="" />{" "}
+                        <img src={ele.imagePath} alt={ele.productName} />
                       </AspectRatio>
                     </CardOverflow>
 
-                    <CardOverflow className={"product-detail"} variant="soft">
+                    <CardOverflow className="product-detail" variant="soft">
                       <Stack className="info">
-                        <Stack className={"row"}>
-                          <Typography className={"title"}>
+                        <Stack direction="row" alignItems="center" spacing={1}>
+                          <Typography className="title">
                             {ele.productName}
                           </Typography>
-                          <Divider width="2" height="24" bg="#d9d9d9" />
-                          <Typography className={"price"}>12$</Typography>
+                          <Divider height="64" width="2" bg="#E3C08D" />
+                          <Typography className="price">12$</Typography>
                         </Stack>
-                        <Stack>
-                          <Typography className={"views"}>
+                        <Stack direction="row" alignItems="center">
+                          <Typography className="views">
                             20
                             <VisibilityIcon
                               sx={{ fontSize: 20, marginLeft: "5px" }}
-                            />{" "}
+                            />
                           </Typography>
                         </Stack>
                       </Stack>
                     </CardOverflow>
                   </Card>
-                );
-              })}
+                ))
+              ) : (
+                <Box className="no-data">New products are not available!</Box>
+              )}
             </CssVarsProvider>
           </Stack>
         </Stack>
