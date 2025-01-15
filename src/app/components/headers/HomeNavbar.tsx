@@ -17,12 +17,12 @@ export default function HomeNavbar() {
             <Box className="home-line">
               <NavLink to="/" activeClassName="underline">
                 Home
-              </NavLink>{" "}
+              </NavLink>
             </Box>
             <Box className="home-line">
               <NavLink to="/products" activeClassName="underline">
                 Products
-              </NavLink>{" "}
+              </NavLink>
             </Box>
             {authMember ? (
               <Box className="home-line">
