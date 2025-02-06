@@ -3,7 +3,7 @@ import React from "react";
 import ProductsPage from "./screens/productsPage/index";
 import OrdersPage from "./screens/ordersPage/index";
 import UserPage from "./screens/userPage/index";
-// import HomePage from "./screens/homePage/index";
+import HomePage from "./screens/homePage/index";
 import Test from "./screens/Test";
 
 import HomeNavbar from "./components/headers/HomeNavbar";
@@ -37,7 +37,7 @@ function App() {
           <UserPage />
         </Route>
         <Route path="/">
-          <Test />
+          <HomePage />
         </Route>
       </Switch>
       <Footer />
