@@ -4,8 +4,8 @@ import Basket from "./Basket";
 import React, { useState, useEffect } from "react";
 
 export default function HomeNavbar() {
-  const [count, setCount] = useState(0);
-  const [value, setValue] = useState<boolean>(true);
+  const [count, setCount] = useState<number>(0);
+  const [value, setValue] = useState<any>({ status: true });
 
   useEffect(() => {
     console.log("componentDidMount"); //data search
