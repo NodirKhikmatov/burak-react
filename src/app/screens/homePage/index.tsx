@@ -7,6 +7,13 @@ import Events from "./Events";
 import "../../../css/home.css";
 
 export default function HomePage() {
+  //selector:store => Data
+
+  useEffect(() => {
+    //Backend server datat request => Data
+    //Slice: Data => Store
+  }, []);
+
   return (
     <div className={"homepage"}>
       <Statistics />
