@@ -22,6 +22,7 @@ const homePageSlice = createSlice({
     },
   },
 });
+//tepadagi nomlar bn adawtirmang boshqa narsalar
 
 export const { setPopularDishes, setNewDishes, setTopUsers } =
   homePageSlice.actions;
