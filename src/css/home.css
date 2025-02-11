@@ -246,67 +246,60 @@
   transform: scale(1.5);
 }
 
-/* Active users */
-
 .homepage .active-users-frame {
   width: 100%;
-  height: 450px;
-  background-color: #f8f8ff;
+  height: 550px;
+  background: #f8f8ff;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
 }
 
 .homepage .active-users-frame .main {
-  width: 90%;
+  margin-top: 93px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 .homepage .active-users-frame .category-title {
-  font-family: "Poppins";
-  font-size: 36px;
+  font-family: "Dancing Script";
   font-style: normal;
-  font-weight: 600;
+  font-weight: 700;
+  font-size: 36px;
   line-height: 43px;
 }
 
-.homepage .cards-frame {
+.homepage .active-users-frame .main .cards-frame {
   width: 100%;
-  display: flex;
+  margin: 47px 2px 2px 2px;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
-  margin-top: 10px;
 }
 
-.homepage .cards-frame .card {
-  width: 700px;
-  height: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: -2px;
-  margin-left: 7px;
+.homepage .active-users-frame .main .cards-frame .card {
+  height: auto;
+  width: 305px;
   cursor: pointer;
+  border-color: #f8f8ff;  
+}
+
+.homepage .active-users-frame .main .cards-frame .card .card-detail {
+  width: auto;
+  height: 49%;
   display: flex;
   justify-content: center;
-  border-top: 1px solid;
-  border-color: #ddddee;
-  background-color: #f3f3f3;
+  margin-top: -10px;
+  background-color: #fff;
 }
 
-.homepage .cards-frame .member-nickname {
-  font-family: "Poppins";
-  font-size: 18px;
+.homepage .active-users-frame .main .cards-frame .card .member-nickname {
+  text-align: center;
+  font-family: "Roboto Serif";
   font-style: normal;
-  font-weight: 500;
-  line-height: 22px;
-  color: #000000;
+  font-weight: 600;
+  color: #000;
 }
 
-.homepage .cards-frame .no-data {
+.homepage .active-users-frame .no-data {
   width: 100%;
   height: 300px;
   display: flex;
