@@ -22,13 +22,6 @@ const popularDishesRetriever = createSelector(
   })
 );
 
-const list = [
-  { productName: "Lavash", imagePath: "/img/lavash.webp" },
-  { productName: "Cutlet", imagePath: "/img/cutlet.webp" },
-  { productName: "Kebab", imagePath: "/img/Kebab.webp" },
-  { productName: "Kebab", imagePath: "/img/Kebab-fresh.webp" },
-];
-
 export default function PopularDishes() {
   const { popularDishes } = useSelector(popularDishesRetriever);
 
