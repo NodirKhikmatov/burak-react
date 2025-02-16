@@ -11,15 +11,23 @@ import OtherNavbar from "./components/headers/OtherNavbar";
 import HelpPage from "./screens/helpPage/index";
 import Footer from "./components/footer/index";
 import useBasket from "./Hooks/useBasket";
+import AuthenticationModal from "./components/auth/index";
 import "../css/app.css";
 import "../css/navbar.css";
 import "../css/footer.css";
-
 import { Switch, Route, Link, useLocation } from "react-router-dom";
 
 function App() {
   const locations = useLocation();
   const { cartItems, onAdd, onRemove, onDelete, onDeleteAll } = useBasket();
+  const [signupOpen, setSignupOpen] = useState<boolean>(false);
+  const [loginOpen, setLoginOpen] = useState<boolean>(false);
+
+  /**handlers */
+
+  const handleSignupClose = () => setSignupOpen(true);
+  const handleLoginClose = () => setLoginOpen(false);
+
   return (
     <>
       {locations.pathname === "/" ? (
@@ -57,6 +65,13 @@ function App() {
         </Route>
       </Switch>
       <Footer />
+
+      <AuthenticationModal
+        signupOpen={signupOpen}
+        loginOpen={loginOpen}
+        handleLoginClose={handleLoginClose}
+        handleSignupClose={handleSignupClose}
+      />
     </>
   );
 }
