@@ -24,7 +24,7 @@ interface BaskedProps {
 
 export default function Basket(props: BaskedProps) {
   const { cartItems, onAdd, onRemove, onDelete, onDeleteAll } = props;
-  const { authMember } = useGlobals();
+  const { authMember, setOrderBuilder } = useGlobals();
   const history = useHistory();
   const itemPrice: number = cartItems.reduce(
     (a: number, c: CartItem) => a + c.quantity * c.price,
@@ -53,6 +53,7 @@ export default function Basket(props: BaskedProps) {
       await order.createOrder(cartItems);
 
       onDeleteAll();
+      setOrderBuilder(new Date());
 
       //REFRESH VIA CONTEXT
       history.push("/orders");
