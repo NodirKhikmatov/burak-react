@@ -10,11 +10,12 @@ import FinishedOrders from "./FinishedOrders";
 import { useDispatch } from "react-redux";
 import { Dispatch } from "@reduxjs/toolkit";
 import { setPausedOrders, setProcessOrders, setFinishedOrders } from "./slice";
-import "../../../css/orders.css";
 import { Order, OrderInquiry } from "../../../lib/types/order";
 import { OrderStatus } from "../../../lib/enum/order.enum";
 import OrderService from "../../services/OrderService";
 import { useGlobals } from "../../Hooks/useGlobal";
+import { useHistory } from "react-router-dom";
+import "../../../css/orders.css";
 
 const actionDispatch = (dispatch: Dispatch) => ({
   setPausedOrders: (data: Order[]) => dispatch(setPausedOrders(data)),
@@ -23,7 +24,8 @@ const actionDispatch = (dispatch: Dispatch) => ({
 });
 
 export default function OrdersPage() {
-  const { orderBuilder } = useGlobals();
+  const { orderBuilder, authMember } = useGlobals();
+  const history = useHistory();
   const [value, setValue] = useState("1");
   const { setPausedOrders, setProcessOrders, setFinishedOrders } =
     actionDispatch(useDispatch());
@@ -56,7 +58,7 @@ export default function OrdersPage() {
   const handleChange = (e: SyntheticEvent, newValue: string) => {
     setValue(newValue);
   };
-
+  if (!authMember) history.push("/");
   return (
     <div className={"order-page"}>
       <Container className={"order-container"}>

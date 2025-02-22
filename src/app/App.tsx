@@ -96,7 +96,7 @@ function App() {
         <Route path="/help">
           <HelpPage />
         </Route>
-        <Route path="/member-page">
+        <Route path="/members-page">
           <UserPage />
         </Route>
         <Route path="/">
