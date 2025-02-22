@@ -33,10 +33,10 @@ export interface LoginInput {
 }
 
 export interface MemberUpdateInput {
-   memberNick?: string;
+  memberNick?: string;
   memberPhone?: string;
   memberPassword?: string; //borayotgan
-  memberAdress?: string;
+  memberAddress?: string;
   memberDesc?: string;
   memberImage?: string;
 }

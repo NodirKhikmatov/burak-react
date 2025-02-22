@@ -20,7 +20,7 @@ export function Settings() {
     {
       memberNick: authMember?.memberNick,
       memberPhone: authMember?.memberPhone,
-      memberAdress: authMember?.memberAddress,
+      memberAddress: authMember?.memberAddress,
       memberDesc: authMember?.memberDesc,
       memberImage: authMember?.memberImage,
     }
@@ -39,7 +39,7 @@ export function Settings() {
   };
 
   const memberAdressHandler = (e: T) => {
-    memberUpdateInput.memberAdress = e.target.value;
+    memberUpdateInput.memberAddress = e.target.value;
     setMemberUpdateInput({ ...memberUpdateInput });
   };
 
@@ -54,7 +54,7 @@ export function Settings() {
       if (
         memberUpdateInput.memberNick === "" ||
         memberUpdateInput.memberPhone === "" ||
-        memberUpdateInput.memberAdress === "" ||
+        memberUpdateInput.memberAddress === "" ||
         memberUpdateInput.memberDesc === ""
       ) {
         throw new Error(Messages.error3);
@@ -136,7 +136,7 @@ export function Settings() {
                 ? authMember.memberAddress
                 : "no address"
             }
-            value={memberUpdateInput.memberAdress}
+            value={memberUpdateInput.memberAddress}
             name="memberAddress"
             onChange={memberAdressHandler}
           />
