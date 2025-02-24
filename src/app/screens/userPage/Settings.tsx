@@ -77,6 +77,7 @@ export function Settings() {
 
     if (!validateImageTypes.includes(fileType)) {
       sweetErrorHandling(Messages.error5).then();
+      
     } else {
       if (file) {
         memberUpdateInput.memberImage = file;
